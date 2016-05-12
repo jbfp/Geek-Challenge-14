@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Cascade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main">
+    <h1>@ViewBag.Title</h1>
+
+    <hr />
+
+    @using (Html.BeginForm("ExternalLogin", "Authentication", new { ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <button class="btn btn-lg btn-block btn-soc btn-twtr" type="submit" id="Twitter" name="provider" value="Twitter">
+            <span class="fa fa-twtr"></span>
+            Sign in with Twitter
+        </button>
+    }
+</div>

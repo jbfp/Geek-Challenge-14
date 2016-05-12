@@ -1,0 +1,5 @@
+﻿^ift.tt
+^(.+\\.)?instagram.com
+^instagr.am
+^(.+\\.)?twitter.com
+^bit.ly

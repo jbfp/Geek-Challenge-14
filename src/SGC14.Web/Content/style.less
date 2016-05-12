@@ -1,0 +1,167 @@
+﻿/* Colors */
+@tweet: #00B6F1;
+@article: red;
+@image: #00c87e;
+@movie: #FBAE16;
+@wiki: #EDC951;
+@book: #BA245F;
+
+html {
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background: #E9E9E9;
+}
+
+.navbar-default {
+    background: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    border: none;
+}
+
+.isotope-container {
+    padding: 1em 0;
+}
+
+.item {
+    background: none repeat scroll 0 0 #FFF;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    float: left;
+    margin: 0 1% 24px;
+    overflow: hidden;
+    width: 15%;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.item hr {
+    padding: 0;
+    margin: 0;
+}
+
+.item > article > section,
+.item > article > header {
+    padding: 1em;
+}
+
+.item img.photo {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.item[data-type="tweet"] > article > header {
+    line-height: 16px;
+}
+
+.item[data-type="tweet"] > article > header > img {
+    float: left;
+    height: 32px;
+    margin-right: 5px;
+    width: 32px;
+}
+
+.item[data-type="tweet"] > article > header > a {
+    display: block;
+}
+
+.item[data-type="tweet"] > article > header > a[rel="author"] {
+    color: #777777;
+    font-weight: bold;
+}
+
+.item[data-type="tweet"] > article > header > a[rel="time"] {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.item article header {
+    font-weight: bold;
+    margin-bottom: 0.75em;
+    margin: 0;
+}
+
+.item article header h5 {
+    margin: 0;
+}
+
+.item article section p {
+    margin: 0;
+    padding-top: 0;
+}
+
+.item[data-type] > article > :first-child {
+    height: 6px;
+    padding-bottom: 0.5em;
+}
+
+.item[data-type="tweet"] > article > :first-child {
+    background-color: @tweet;
+}
+
+.item[data-type="article"] > article > :first-child {
+    background-color: @article;
+}
+
+.item[data-type="movie"] > article > :first-child {
+    background-color: @movie;
+}
+
+.item[data-type="wiki"] > article > :first-child {
+    background-color: @wiki;
+}
+
+.item[data-type="book"] > article > :first-child {
+    background-color: @book;
+}
+
+.tweet {
+    color: @tweet;
+}
+
+.article {
+    color: @article;
+}
+
+.image {
+    color: @image;
+}
+    
+.movie {
+    color: @movie;
+}
+
+.wiki {
+    color: @wiki;
+}
+
+.book {
+    color: @book;
+}
+
+@media (max-device-width : 768px) {
+    .item {
+        width: 45%;
+    }
+}
+
+@media (min-device-width : 768px) and (max-device-width : 1024px) {
+    .item {
+        width: 30%;
+    }
+}
+
+@media (min-device-width : 1024px) and (max-device-width : 1440px) {
+    .item {
+        width: 20%;
+    }
+}
+
+/* Hide radio buttons - we use toggle-button instead. */
+label.btn > input[type="radio"],
+label.btn > input[type="checkbox"] {
+    display: none;
+}

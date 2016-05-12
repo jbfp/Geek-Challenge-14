@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Cascade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main" ng-controller="IndexController">
+    <h1>@ViewBag.Title</h1>
+
+    <hr />
+
+    @using (Html.BeginForm("Search", "Search", FormMethod.Get, new { role = "form" }))
+    {
+        <div class="form-group form-group-lg">
+            <div class="input-group">
+                @Html.TextBox("query", string.Empty, new { @class = "form-control input-lg", placeholder = "Search", autofocus = true, required = true, type = "search" })
+                <span class="input-group-btn">
+                    <button type="submit" title="Search" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    }
+
+    <div ng-show="vm.showSuggestions">
+        <span class="text-muted">
+            Twitter trends:
+            <span ng-repeat="suggestion in vm.suggestions">
+                <a href="/search?query={{suggestion | encodeURIComponent}}">{{suggestion}}</a><span ng-show="!$last">,</span>
+            </span>
+        </span>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/app/controllers/IndexController.js"></script>
+    <script src="~/Scripts/app/filters/EncodeURIComponentFilter.js"></script>
+}
